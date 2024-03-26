@@ -1,89 +1,83 @@
 package BookRestAPI.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name="supplier")
-public class Supplier 
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="sid")
-	private int sid;
-	
-	@Column(name="first_name")
-	private String fname;
-	
-	@Column(name="last_name")
-	private String lname;
-	
-	@Column(name="address")
-	private String address;
-	
-	@Column(name="contact_no", length=10)
-	private long contactno;
+@Table(name = "supplier")
+public class Supplier {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sid")
+    private int sid;
 
-	public Supplier() {
-		super();
-	}
+    @Column(name = "first_name")
+    private String fname;
 
-	public Supplier(int sid, String fname, String lname, String address, long contactno) {
-		super();
-		this.sid = sid;
-		this.fname = fname;
-		this.lname = lname;
-		this.address = address;
-		this.contactno = contactno;
-	}
+    @Column(name = "last_name")
+    private String lname;
 
-	public int getSid() {
-		return sid;
-	}
+    @Column(name = "address")
+    private String address;
 
-	public void setSid(int sid) {
-		this.sid = sid;
-	}
+    @Column(name = "contact_no", length = 10)
+    private long contactno;
 
-	public String getFname() {
-		return fname;
-	}
+    public Supplier() {
+        super();
+    }
 
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
+    public Supplier(int sid, String fname, String lname, String address, long contactno) {
+        super();
+        this.sid = sid;
+        this.fname = fname;
+        this.lname = lname;
+        this.address = address;
+        this.contactno = contactno;
+    }
 
-	public String getLname() {
-		return lname;
-	}
+    public int getSid() {
+        return sid;
+    }
 
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getFname() {
+        return fname;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
 
-	public long getContactno() {
-		return contactno;
-	}
+    public String getLname() {
+        return lname;
+    }
 
-	public void setContactno(long contactno) {
-		this.contactno = contactno;
-	}
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
 
-	@Override
-	public String toString() {
-		return "Supplier [sid=" + sid + ", fname=" + fname + ", lname=" + lname + ", address=" + address
-				+ ", contactno=" + contactno + "]";
-	}
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public long getContactno() {
+        return contactno;
+    }
+
+    public void setContactno(long contactno) {
+        this.contactno = contactno;
+    }
+
+    @Override
+    public String toString() {
+        return "Supplier [sid=" + sid + ", fname=" + fname + ", lname=" + lname + ", address=" + address
+                + ", contactno=" + contactno + "]";
+    }
 }

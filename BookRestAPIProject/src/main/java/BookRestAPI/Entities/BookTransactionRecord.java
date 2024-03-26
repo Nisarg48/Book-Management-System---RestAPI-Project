@@ -1,101 +1,89 @@
 package BookRestAPI.Entities;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 @Entity
-@Table(name="book_transaction_records")
-public class BookTransactionRecord 
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="tid")
-	private int tid;
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="uid")
-	private User user; 
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="isbn")
-	private Books book;
-	
-	@Column(name="borrow_date")
-	@Temporal(TemporalType.DATE)
-	private Date borrowDate;
-	
-	@Column(name="return_date")
-	@Temporal(TemporalType.DATE)
-	private Date returnDate;
+@Table(name = "book_transaction_records")
+public class BookTransactionRecord {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "tid")
+    private int tid;
 
-	public BookTransactionRecord() {
-		super();
-	}
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "uid")
+    private User user;
 
-	public BookTransactionRecord(int tid, User user, Books book, Date borrowDate, Date returnDate) {
-		super();
-		this.tid = tid;
-		this.user = user;
-		this.book = book;
-		this.borrowDate = borrowDate;
-		this.returnDate = returnDate;
-	}
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "isbn")
+    private Books book;
 
-	public int getTid() {
-		return tid;
-	}
+    @Column(name = "borrow_date")
+    @Temporal(TemporalType.DATE)
+    private Date borrowDate;
 
-	public void setTid(int tid) {
-		this.tid = tid;
-	}
+    @Column(name = "return_date")
+    @Temporal(TemporalType.DATE)
+    private Date returnDate;
 
-	public User getUser() {
-		return user;
-	}
+    public BookTransactionRecord() {
+        super();
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public BookTransactionRecord(int tid, User user, Books book, Date borrowDate, Date returnDate) {
+        super();
+        this.tid = tid;
+        this.user = user;
+        this.book = book;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+    }
 
-	public Books getBook() {
-		return book;
-	}
+    public int getTid() {
+        return tid;
+    }
 
-	public void setBook(Books book) {
-		this.book = book;
-	}
+    public void setTid(int tid) {
+        this.tid = tid;
+    }
 
-	public Date getBorrowDate() {
-		return borrowDate;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setBorrowDate(Date borrowDate) {
-		this.borrowDate = borrowDate;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public Date getReturnDate() {
-		return returnDate;
-	}
+    public Books getBook() {
+        return book;
+    }
 
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
-	}
+    public void setBook(Books book) {
+        this.book = book;
+    }
 
-	@Override
-	public String toString() {
-		return "BookTransactionRecord [tid=" + tid + ", user=" + user + ", book=" + book + ", borrowDate=" + borrowDate
-				+ ", returnDate=" + returnDate + "]";
-	}
+    public Date getBorrowDate() {
+        return borrowDate;
+    }
+
+    public void setBorrowDate(Date borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    @Override
+    public String toString() {
+        return "BookTransactionRecord [tid=" + tid + ", user=" + user + ", book=" + book + ", borrowDate=" + borrowDate
+                + ", returnDate=" + returnDate + "]";
+    }
 }

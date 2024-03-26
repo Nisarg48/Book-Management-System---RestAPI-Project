@@ -1,15 +1,15 @@
 package BookRestAPI.Service;
 
-import java.util.List;
-
 import BookRestAPI.Entities.Books;
 
+import java.util.List;
+
 public interface BookService {
-	
-	public List<Books> findAll();
-	
-	public Books findById(int isbn);
-	
+
+    public List<Books> findAll();
+
+    public Books findById(int isbn);
+
 //	public List<Books> findByTitle(String title);
 //	
 //	public List<Books> findByAuthor(String author);
@@ -18,8 +18,8 @@ public interface BookService {
 //	
 //	public List<Books> findByYearofpublished(String yop);
 
-	public void addBook(Books book);
-	
-	public void deleteById(int id);
-	
+    public void addBook(Books book);
+
+    public void deleteById(int id);
+
 }
